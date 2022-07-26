@@ -33,8 +33,8 @@ class Solution:
         while i >= 0:
             if ary[i] == 9:
                 if len(ary) < 2:
-                    ary.insert(0, 1)
                     ary[i] = 0
+                    ary.insert(0, 1)
                     break
                 else:
                     b = True
