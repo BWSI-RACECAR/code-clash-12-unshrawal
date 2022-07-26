@@ -28,24 +28,14 @@ class Solution:
     def addOne(self,ary):
         # type ary: list
         # return type: list
-        i = len(ary)-1
-        b = False
-        while i >= 0:
-            if ary[i] == 9:
-                if len(ary) < 2:
-                    ary[i] = 0
-                    ary.insert(0, 1)
-                    break
-                else:
-                    b = True
-                    ary[i] = 0
-            else:
-                if b:
-                    ary[i] += 1
-                b = False
-            i -=1
-        if b:
-            ary.insert(0, 1)
+        length = len(ary)-1
+        while(ary[length]==9):
+            ary[length]=0
+            length-=1
+        if length < 0:
+            ary = [1] + ary
+        else:
+            ary[length]+=1
         # TODO: Write code below to return a list "ary" with the solution to the prompt
         
         return ary
